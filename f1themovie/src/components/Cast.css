@@ -1,0 +1,144 @@
+.cast-section {
+  min-height: 100vh;
+  padding: 6rem 1.5rem 3rem;
+  background-color: var(--color-black);
+}
+
+.cast-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cast-main-title {
+  border-left: 4px solid var(--color-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .cast-main-title {
+    font-size: 4rem;
+  }
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cast-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cast-card {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background-color: #111;
+  border: 1px solid #222;
+  cursor: pointer;
+}
+
+.cast-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: grayscale(100%);
+  opacity: 1; /* 흐릿함 줄이기 */
+  transition: filter 0.4s ease;
+  transform: translateZ(0); /* GPU 레이어 고정 */
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast; /* Chrome */
+  will-change: transform, filter;
+}
+.cast-card:hover .cast-image {
+  filter: grayscale(0%);
+}
+
+.cast-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+  opacity: 0.9;
+}
+
+.cast-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  transform: translateY(1rem);
+  transition: transform 0.3s ease;
+}
+
+.cast-card:hover .cast-content {
+  transform: translateY(0);
+}
+
+.cast-header {
+  border-left: 2px solid var(--color-primary);
+  padding-left: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cast-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.cast-role {
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+.cast-actor {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.cast-description-wrapper {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  opacity: 0;
+}
+
+.cast-card:hover .cast-description-wrapper {
+  height: auto;
+  opacity: 1;
+}
+
+.cast-description {
+  color: var(--color-gray);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding-top: 0.5rem;
+}

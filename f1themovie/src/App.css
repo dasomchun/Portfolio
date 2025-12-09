@@ -1,0 +1,12 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 전체 스크롤 없앰 */
+}
+
+section {
+  height: 100vh; /* 각 섹션이 한 화면 가득 */
+  overflow: hidden;
+}
