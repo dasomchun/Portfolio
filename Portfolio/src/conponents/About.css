@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+
+:root {
+  --blue-title: #bfe2ff; /* 헤더 배경 */
+  --blue-main: #6b7cff; /* 💜 라벤더 블루 포인트 */
+  --blue-light: #9daaff; /* hover / 보조 톤 */
+  --text-dark: #222;
+  --bg-main: #fff2e0; /* 따뜻한 아이보리 배경 */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-main);
+  font-family: "Noto Sans KR", "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.introduce {
+  background: var(--blue-title);
+  color: #ffeb8a;
+  text-align: center;
+  width: 100%;
+  padding: 2.5rem 0 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.introduce h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0;
+  position: relative;
+}
+
+.introduce h2::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, #fff6bf, #ffd84d);
+  border-radius: 3px;
+  margin: 0.4rem auto 0;
+}
+
+.about-container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile-card {
+  margin: -20px 0 0 -70px;
+  width: 100%;
+  background: #f9fbff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(200, 210, 255, 0.12);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-3px);
+}
+
+.profile-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  color: var(--blue-main);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.profile-info p {
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.info-block {
+  margin-left: 10px;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(107, 124, 255, 0.08);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.info-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(107, 124, 255, 0.12);
+}
+
+.info-block h3 {
+  background: var(--blue-main);
+  color: #ffeb8a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin: -1.3rem -1.5rem 1rem;
+}
+
+.info-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-block li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  gap: 1rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+.info-block li span {
+  min-width: 160px;
+  color: var(--blue-main);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.info-block.education,
+.info-block.experience,
+.info-block.license {
+  height: 200px;
+}
+
+.info-block.experience {
+  min-height: 200px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.skill-icon-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 120px;
+}
+
+.skill-icon {
+  font-size: 1.1rem;
+  color: var(--blue-main);
+}
+
+.skill-bar-track {
+  flex: 1;
+  height: 8px;
+  background: #e5e7f0;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--blue-main), var(--blue-light));
+  transition: width 0.6s ease;
+}
+
+.skill-percent {
+  width: 45px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.skill-row.html5 .skill-bar-fill {
+  background: #e44d26;
+}
+.skill-row.css3 .skill-bar-fill {
+  background: #61dafb;
+}
+.skill-row.javascript .skill-bar-fill {
+  background: #f7df1e;
+}
+.skill-row.react .skill-bar-fill {
+  background: #1572b6;
+}
+.skill-row.typescript .skill-bar-fill {
+  background: greenyellow;
+}
+.skill-row.git .skill-bar-fill {
+  background: orange;
+}
+.skill-row.figma .skill-bar-fill {
+  background: palevioletred;
+}
+/* ====== 반응형 ====== */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .info-block li {
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+}
