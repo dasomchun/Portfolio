@@ -7,11 +7,13 @@ import Project2 from "./conponents/Project2";
 import Project3 from "./conponents/Project3";
 import NavBar from "./conponents/NavBar";
 import Contact from "./conponents/Contact";
+import ScrollTop from "./conponents/ScrollTop";
 
 export default function App() {
   return (
     <div className="app">
       <NavBar />
+      <ScrollTop />
       <main className="site-main">
         <Routes>
           <Route path="/" element={<Home />} />
