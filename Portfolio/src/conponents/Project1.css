@@ -243,7 +243,7 @@
   }
 
   .port1-container {
-    margin-top: 150px;
+    margin: 100px auto;
     padding: 1.5rem;
   }
 
@@ -253,7 +253,7 @@
   }
 
   .port1-info {
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
 
   .port1-number {
@@ -267,10 +267,25 @@
   .port1-stats {
     grid-template-columns: 1fr;
   }
-
+  .port1-buttons {
+    margin-top: 2.5rem;
+  }
+  .port1-buttons {
+    max-width: 150px;
+    margin: 0 auto;
+  }
   .btn-primary {
-    width: 100%;
-    margin-bottom: 10px;
+    background: #6b7cff;
+    color: #ffeb8a;
+    border: none;
+    padding: 0.65rem 1rem;
+    margin-right: 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    width: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
   }
 }
 
@@ -283,10 +298,17 @@
     font-size: 1.6rem !important;
   }
 
+  .port1-container {
+    grid-template-columns: 1fr;
+    margin: 100px auto;
+  }
+
   .port1-images img {
     height: 150px;
   }
-
+  .port1-info {
+    max-width: 300px;
+  }
   .port1-title {
     font-size: 1.3rem;
   }

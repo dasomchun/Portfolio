@@ -199,17 +199,31 @@
   }
 
   .port2-container {
-    margin-top: 150px;
+    margin: 100px auto;
     padding: 1.5rem;
   }
+  .port2-tools {
+    display: flex;
+    gap: 5px;
+  }
 
+  .port2-tools span {
+    display: inline-block;
+    border: 2px solid #6b7cff;
+    color: #6b7cff;
+    border-radius: 50px;
+    padding: 0.3rem 0.15rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
   .port2-images img {
     height: 180px;
     border-radius: 8px;
   }
 
   .port2-info {
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
 
   .port2-number {
@@ -223,10 +237,8 @@
   .port2-stats {
     grid-template-columns: 1fr;
   }
-
-  .btn-primary {
-    width: 100%;
-    margin-bottom: 10px;
+  .port2-buttons {
+    margin: 0 auto;
   }
 }
 
@@ -239,20 +251,38 @@
     font-size: 1.6rem !important;
   }
 
+  .port2-tools {
+    display: flex;
+    gap: 5px;
+  }
+
+  .port2-tools span {
+    display: inline-block;
+    border: 2px solid #6b7cff;
+    color: #6b7cff;
+    border-radius: 50px;
+    padding: 0.15rem 0.1rem;
+    font-weight: 700;
+    font-size: 0.6rem;
+    transition: all 0.3s ease;
+  }
+  .port2-container {
+    grid-template-columns: 1fr;
+    margin: 100px auto;
+  }
+
   .port2-images img {
     height: 150px;
   }
-
+  .port2-info {
+    margin: 0 auto;
+    max-width: 300px;
+  }
   .port2-title {
     font-size: 1.3rem;
   }
 
   .port2-desc {
     font-size: 0.9rem;
-  }
-
-  .port2-tools span {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.8rem;
   }
 }

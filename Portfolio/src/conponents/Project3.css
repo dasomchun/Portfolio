@@ -215,22 +215,36 @@
   }
 }
 @media (max-width: 768px) {
-  .portfolio31-header .inner h2 {
+  .portfolio3-header .inner h2 {
     font-size: 2rem !important;
   }
 
   .port3-container {
-    margin-top: 150px;
+    margin: 100px auto;
     padding: 1.5rem;
   }
+  .port3-tools {
+    display: flex;
+    gap: 5px;
+  }
 
+  .port3-tools span {
+    display: inline-block;
+    border: 2px solid #6b7cff;
+    color: #6b7cff;
+    border-radius: 50px;
+    padding: 0.3rem 0.15rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
   .port3-images img {
     height: 180px;
     border-radius: 8px;
   }
 
   .port3-info {
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
 
   .port3-number {
@@ -244,36 +258,52 @@
   .port3-stats {
     grid-template-columns: 1fr;
   }
-
-  .btn-primary {
-    width: 100%;
-    margin-bottom: 10px;
+  .port3-buttons {
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
-  .portfolio1-header {
+  .portfolio3-header {
     padding: 1.5rem 0;
   }
 
-  .portfolio1-header .inner h2 {
+  .portfolio3-header .inner h2 {
     font-size: 1.6rem !important;
+  }
+
+  .port3-tools {
+    display: flex;
+    gap: 5px;
+  }
+
+  .port3-tools span {
+    display: inline-block;
+    border: 2px solid #6b7cff;
+    color: #6b7cff;
+    border-radius: 50px;
+    padding: 0.15rem 0.1rem;
+    font-weight: 700;
+    font-size: 0.6rem;
+    transition: all 0.3s ease;
+  }
+  .port3-container {
+    grid-template-columns: 1fr;
+    margin: 100px auto;
   }
 
   .port3-images img {
     height: 150px;
   }
-
+  .port3-info {
+    margin: 0 auto;
+    max-width: 300px;
+  }
   .port3-title {
     font-size: 1.3rem;
   }
 
   .port3-desc {
     font-size: 0.9rem;
-  }
-
-  .port3-tools span {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.8rem;
   }
 }
