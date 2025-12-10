@@ -267,11 +267,9 @@
   .port1-stats {
     grid-template-columns: 1fr;
   }
+
   .port1-buttons {
-    margin-top: 2.5rem;
-  }
-  .port1-buttons {
-    max-width: 150px;
+    max-width: 200px;
     margin: 0 auto;
   }
   .btn-primary {
@@ -283,7 +281,6 @@
     border-radius: 6px;
     font-size: 0.95rem;
     font-weight: 700;
-    width: 30px;
     cursor: pointer;
     transition: background 0.3s ease;
   }
