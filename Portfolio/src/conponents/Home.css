@@ -3,7 +3,7 @@
   --neon-light: #5fe1ff;
   --bg-top: #001530;
   --bg-bottom: #000a1a;
-} /* 전체 레이아웃 */
+}
 .home {
   position: relative;
   width: 100%;

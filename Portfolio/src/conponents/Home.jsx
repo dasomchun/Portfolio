@@ -5,7 +5,7 @@ import "./Home.css";
 export default function Home() {
   return (
     <section id="home" className="home">
-      <div className="overlay"></div> {/* 어두운 블러 효과용 */}
+      <div className="overlay"></div>
       <div className="home-content">
         <h3 className="home-sub">Chun-Da-Som</h3>
         <h1 className="home-title">PORTFOLIO</h1>

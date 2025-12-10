@@ -28,7 +28,6 @@ export default function About() {
       </header>
 
       <div className="about-container">
-        {/* 프로필 */}
         <div className="profile-card">
           <img src="../images/pic.jpg" alt="Profile" className="profile-img" />
           <h2 className="profile-name">
@@ -42,20 +41,20 @@ export default function About() {
           </div>
         </div>
 
-        {/* 정보 블록들 */}
         <div className="info-grid">
           <div className="info-block education">
             <h3>학력 Education</h3>
             <ul>
               <li>
-                <span>2015.03 ~ 2017.02</span> 세종대학교 호텔외식비즈니스 학과
-                졸업
+                <span>2015.03 ~ 2017.02</span>
+                <p>세종대학교 호텔외식비즈니스학과 졸업</p>
               </li>
               <li>
-                <span>2009.03 ~ 2015.02</span> 국제대학교 컴퓨터정보 학과 졸업
+                <span>2009.03 ~ 2015.02</span>
+                <p>국제대학교 컴퓨터정보학과 졸업</p>
               </li>
               <li>
-                <span>2006.03 ~ 2009.02</span> 삼성고등학교 졸업
+                <span>2006.03 ~ 2009.02</span> <p>삼성고등학교 졸업</p>
               </li>
             </ul>
           </div>
@@ -64,16 +63,19 @@ export default function About() {
             <h3>경력 Experience</h3>
             <ul>
               <li>
-                <span>2022.02 ~ 2022.11</span> 김종용누룽지통닭 신림점 홀매니저
+                <span>2022.02 ~ 2022.11</span>{" "}
+                <p>김종용누룽지통닭 신림점 홀매니저</p>
               </li>
               <li>
-                <span>2018.11 ~ 2020.10</span> 압구정순대국 주방실장
+                <span>2018.11 ~ 2020.10</span> <p>압구정순대국 주방실장</p>
               </li>
               <li>
-                <span>2017.08 ~ 2018.02</span> 네모오징어 본사 슈퍼바이저
+                <span>2017.08 ~ 2018.02</span>
+                <p>네모오징어 본사 슈퍼바이저</p>
               </li>
               <li>
-                <span>2012.10 ~ 2017.01</span> 불고기브라더스 서비스 매니저
+                <span>2012.10 ~ 2017.01</span>{" "}
+                <p>불고기브라더스 서비스 매니저</p>
               </li>
             </ul>
           </div>
@@ -82,13 +84,16 @@ export default function About() {
             <h3>자격증 License</h3>
             <ul>
               <li>
-                <span>2012.04</span> 운전면허 1종 보통
+                <span>2012.04</span>
+                <p>운전면허 1종 보통</p>
               </li>
               <li>
-                <span>2013.04</span> MOS PowerPoint (Microsoft)
+                <span>2013.04</span>
+                <p>MOS PowerPoint (Microsoft)</p>
               </li>
               <li>
-                <span>2013.06</span> MOS Excel (Microsoft)
+                <span>2013.06</span>
+                <p>MOS Excel (Microsoft)</p>
               </li>
             </ul>
           </div>

@@ -51,6 +51,9 @@ export default function Project3() {
             전기차 전문 플랫폼 revolt의 Mobile App을 Figma를 사용해 카피 구현
             하였습니다. 이미지 같은 경우 픽셀 조정 필요 시 Photoshop을
             이용하였으며, 디자인을 최대한 비슷하게 만들었습니다.
+            <a href="https://wwit.design/2025/03/15/revolt/">
+              (WWIT 리볼트 탭 참조)
+            </a>
           </div>
 
           <div className="port3-stats">
@@ -80,10 +83,10 @@ export default function Project3() {
 
           <div className="port3-buttons">
             <Link to="/project2">
-              <button className="btn-primary3">← Project2</button>
+              <button className="btn-primary3">← &nbsp;Project2</button>
             </Link>
             <Link to="/contact">
-              <button className="btn-primary3">End →</button>
+              <button className="btn-primary3">End &nbsp; →</button>
             </Link>
           </div>
         </div>

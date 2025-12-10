@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
 
 :root {
-  --blue-title: #bfe2ff; /* 헤더 배경 */
-  --blue-main: #6b7cff; /* 💜 라벤더 블루 포인트 */
-  --blue-light: #9daaff; /* hover / 보조 톤 */
+  --blue-title: #bfe2ff;
+  --blue-main: #6b7cff;
+  --blue-light: #9daaff;
   --text-dark: #222;
-  --bg-main: #fff2e0; /* 따뜻한 아이보리 배경 */
+  --bg-main: #fff2e0;
 }
 
 html,
@@ -57,21 +57,23 @@ body {
 .about-container {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 450px 1fr;
   width: 100%;
-  max-width: 1200px;
-  padding: 0;
+  max-width: 1700px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
 .profile-card {
-  margin: -20px 0 0 -70px;
+  height: 720px;
   width: 100%;
-  background: #f9fbff;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(200, 210, 255, 0.12);
+  box-shadow: 0 2px 4px rgba(150, 150, 150, 0.3);
   text-align: center;
   transition: all 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .profile-card:hover {
@@ -80,49 +82,49 @@ body {
 
 .profile-img {
   width: 100%;
+  max-width: 350px;
+  height: auto;
   border-radius: 12px;
-  margin-bottom: 1rem;
 }
 
 .profile-name {
   color: var(--blue-main);
   font-size: 1.5rem;
   font-weight: 800;
-  margin-bottom: 1rem;
-  line-height: 1.6;
 }
 
 .profile-info p {
   color: black;
   font-weight: 600;
   font-size: 1rem;
-  line-height: 1.6;
 }
 
 .info-grid {
+  margin-left: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  padding-bottom: 3rem;
 }
 
 .info-block {
   margin-left: 10px;
-  background: #fefefe;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(107, 124, 255, 0.08);
+  box-shadow: 0 2px 4px rgba(150, 150, 150, 0.3);
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 .info-block:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(107, 124, 255, 0.12);
+  box-shadow: 0 4px 8px rgba(150, 150, 150, 0.12);
 }
 
 .info-block h3 {
   background: var(--blue-main);
   color: #ffeb8a;
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 900;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   margin: -1.3rem -1.5rem 1rem;
@@ -134,35 +136,23 @@ body {
   margin: 0;
 }
 
-.info-block li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  gap: 1rem;
-  font-size: 1rem;
-  color: var(--text-dark);
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  line-height: 1.6;
-}
-
 .info-block li span {
-  min-width: 160px;
   color: var(--blue-main);
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 1.1rem;
   flex-shrink: 0;
 }
-.info-block.education,
-.info-block.experience,
-.info-block.license {
-  height: 200px;
+.info-block li p {
+  margin-top: 10px;
+  text-align: justify;
+  font-weight: bold;
 }
-
-.info-block.experience {
-  min-height: 200px;
+.education {
+  height: 260px;
+}
+.license {
+  margin-top: -75px;
+  height: 260px;
 }
 
 .skill-row {
@@ -228,8 +218,8 @@ body {
 .skill-row.figma .skill-bar-fill {
   background: palevioletred;
 }
-/* ====== 반응형 ====== */
-@media (max-width: 900px) {
+
+@media (max-width: 1024px) {
   .about-container {
     grid-template-columns: 1fr;
   }

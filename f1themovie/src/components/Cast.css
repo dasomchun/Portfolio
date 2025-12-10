@@ -59,11 +59,10 @@
   height: 100%;
   object-fit: fill;
   filter: grayscale(100%);
-  opacity: 1; /* 흐릿함 줄이기 */
+  opacity: 1;
   transition: filter 0.4s ease;
-  transform: translateZ(0); /* GPU 레이어 고정 */
-  backface-visibility: hidden;
-  image-rendering: -webkit-optimize-contrast; /* Chrome */
+  transform: translateZ(0);
+  image-rendering: -webkit-optimize-contrast;
   will-change: transform, filter;
 }
 .cast-card:hover .cast-image {

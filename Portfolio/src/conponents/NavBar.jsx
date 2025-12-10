@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 
 export default function NavBar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className={`navbar ${isHome ? "transparent" : "solid"}`}>
+    <nav
+      className={`navbar ${isHome ? "transparent" : "solid"} ${
+        menuOpen ? "menu-open" : ""
+      }`}
+    >
       <div className="nav-container">
-        <ul className="nav-menu">
+        <div className="hamburger" onClick={toggleMenu}>
+          <span className={menuOpen ? "bar open" : "bar"}></span>
+          <span className={menuOpen ? "bar open" : "bar"}></span>
+          <span className={menuOpen ? "bar open" : "bar"}></span>
+        </div>
+
+        <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
           <li>
             <Link to="/" className={location.pathname === "/" ? "active" : ""}>
               Home

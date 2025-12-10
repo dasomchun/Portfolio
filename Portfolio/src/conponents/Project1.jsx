@@ -15,7 +15,7 @@ export default function Portfolio1() {
         <div className="port1-images">
           <div className="left-image">
             <a
-              href="http://127.0.0.1:5500/Megacoffie/index.html"
+              href="https://portfolio-ww2p.vercel.app/"
               target="_blank"
               rel="noreferrer"
             >
@@ -23,14 +23,14 @@ export default function Portfolio1() {
             </a>
           </div>
           <a
-            href="http://127.0.0.1:5500/Megacoffie/index.html"
+            href="https://portfolio-ww2p.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
             <img src="../images/d1.png" alt=" 메가커피 서브페이지1" />
           </a>
           <a
-            href="http://127.0.0.1:5500/Megacoffie/index.html"
+            href="https://portfolio-ww2p.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
@@ -81,7 +81,7 @@ export default function Portfolio1() {
           {/* 다음 페이지 버튼 */}
           <div className="port1-buttons">
             <Link to="/project2">
-              <button className="btn-primary">Next Project →</button>
+              <button className="btn-primary">Next Project &nbsp;→</button>
             </Link>
           </div>
         </div>

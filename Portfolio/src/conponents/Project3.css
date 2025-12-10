@@ -80,10 +80,10 @@
 }
 .port3-info {
   margin-top: -50px;
-  background: #fefeff;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 14px;
   border: 1px solid rgba(245, 247, 255, 0.9);
-  box-shadow: 0 4px 10px rgba(200, 210, 255, 0.12);
+  box-shadow: 0 2px 4px rgba(150, 150, 150, 0.3);
   padding: 2rem;
 }
 .port3-number {
@@ -127,6 +127,11 @@
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
+}
+.port3-desc a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
 .port3-stats {
@@ -190,17 +195,83 @@
   color: white;
 }
 
-/* 반응형 */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .port3-container {
     grid-template-columns: 1fr;
   }
 
   .port3-images {
     grid-template-columns: 1fr;
+    max-width: 90%;
   }
 
   .port3-images img {
     height: 200px;
+  }
+  .port3-info {
+    max-width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio31-header .inner h2 {
+    font-size: 2rem !important;
+  }
+
+  .port3-container {
+    margin-top: 150px;
+    padding: 1.5rem;
+  }
+
+  .port3-images img {
+    height: 180px;
+    border-radius: 8px;
+  }
+
+  .port3-info {
+    padding: 1.5rem;
+  }
+
+  .port3-number {
+    font-size: 2rem;
+  }
+
+  .port3-title {
+    font-size: 1.5rem;
+  }
+
+  .port3-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio1-header {
+    padding: 1.5rem 0;
+  }
+
+  .portfolio1-header .inner h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .port3-images img {
+    height: 150px;
+  }
+
+  .port3-title {
+    font-size: 1.3rem;
+  }
+
+  .port3-desc {
+    font-size: 0.9rem;
+  }
+
+  .port3-tools span {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.8rem;
   }
 }

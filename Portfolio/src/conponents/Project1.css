@@ -20,11 +20,10 @@
   color: #ffeb8a;
   text-align: center;
   padding: 2.5rem 0 1.5rem;
-  z-index: 1000; /* 위로 */
+  z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* 공통 내부 컨테이너 */
 .portfolio1-header .inner,
 .portfolio2-header .inner,
 .portfolio3-header .inner {
@@ -32,18 +31,16 @@
   margin: 0 auto;
 }
 
-/* 공통 제목 스타일 */
 .portfolio1-header .inner h2,
 .portfolio2-header .inner h2,
 .portfolio3-header .inner h2 {
-  font-size: 3rem !important; /* ✅ 강제 통일 */
+  font-size: 3rem !important;
   font-weight: 900;
   letter-spacing: 1px;
   margin: 0;
-  position: relative; /* ::after 기준 */
+  position: relative;
 }
 
-/* 공통 밑줄 */
 .portfolio1-header .inner h2::after,
 .portfolio2-header .inner h2::after,
 .portfolio3-header .inner h2::after {
@@ -110,10 +107,10 @@
 
 .port1-info {
   margin-top: -50px;
-  background: #fefeff;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 14px;
   border: 1px solid rgba(245, 247, 255, 0.9);
-  box-shadow: 0 4px 10px rgba(200, 210, 255, 0.12);
+  box-shadow: 0 2px 4px rgba(150, 150, 150, 0.3);
   padding: 2rem;
 }
 .port1-number {
@@ -220,17 +217,84 @@
   color: white;
 }
 
-/* 반응형 */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .port1-container {
     grid-template-columns: 1fr;
   }
 
   .port1-images {
     grid-template-columns: 1fr;
+    max-width: 90%;
   }
 
   .port1-images img {
     height: 200px;
+  }
+  .port1-info {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio1-header .inner h2 {
+    font-size: 2rem !important;
+  }
+
+  .port1-container {
+    margin-top: 150px;
+    padding: 1.5rem;
+  }
+
+  .port1-images img {
+    height: 180px;
+    border-radius: 8px;
+  }
+
+  .port1-info {
+    padding: 1.5rem;
+  }
+
+  .port1-number {
+    font-size: 2rem;
+  }
+
+  .port1-title {
+    font-size: 1.5rem;
+  }
+
+  .port1-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio1-header {
+    padding: 1.5rem 0;
+  }
+
+  .portfolio1-header .inner h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .port1-images img {
+    height: 150px;
+  }
+
+  .port1-title {
+    font-size: 1.3rem;
+  }
+
+  .port1-desc {
+    font-size: 0.9rem;
+  }
+
+  .port1-tools span {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.8rem;
   }
 }

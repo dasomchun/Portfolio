@@ -15,14 +15,26 @@ export default function Project2() {
       <div className="port2-container">
         <div className="port2-images">
           <div className="left-image">
-            <a href="#" target="_blank" rel="noreferrer">
+            <a
+              href="https://portfolio-ugh5-git-main-dasomchuns-projects.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="../images/a1.png" alt="더무비 메인" />
             </a>
           </div>
-          <a href="#" target="_blank" rel="noreferrer">
+          <a
+            href="https://portfolio-ugh5-git-main-dasomchuns-projects.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="../images/a2.png" alt=" 더무비 서브페이지1" />
           </a>
-          <a href="#" target="_blank" rel="noreferrer">
+          <a
+            href="https://portfolio-ugh5-git-main-dasomchuns-projects.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="../images/a3.png" alt="더무비 서브페이지2" />
           </a>
         </div>
@@ -34,6 +46,7 @@ export default function Project2() {
           <div className="port2-tools">
             <span>React</span>
             <span>React-Router-Dom</span>
+            <span>AnimatePresence</span>
             <span>JavaScript</span>
           </div>
 
@@ -54,8 +67,9 @@ export default function Project2() {
               <h4>프로젝트 목표</h4>
               <p>
                 React Router DOM을 기반으로 페이지 전환 구조를 직접 구현하면서
-                React SPA 개발 역량을 향상시키고, 동시에 시각적 완성도를 고려한
-                UI·UX 디자인 감각 을 함께 성장시키는 것을 목표로 했습니다.
+                React 개발 역량과 Hook 사용 숙련도를 향상시키고, AnimatePresence
+                툴을 사용하여 여려가지 효과를 주고 시각적 완성도를 고려한 UI·UX
+                디자인 감각 을 함께 성장시키는 것을 목표로 했습니다.
               </p>
             </div>
           </div>
@@ -64,7 +78,7 @@ export default function Project2() {
             <h4>프로젝트 성과</h4>
             <p>
               React Router DOM을 통해 페이지 전환 구조와 컴포넌트 단위 개발에
-              대한 이해를 높였습니다. 또한 단순한 클론이 아닌, 페이지 구성과
+              대한 이해를 높였습니다. 또 페이지 구성과 AnimatePresence을 사용해
               시각적 요소를 직접 설계하며 디자인 감각과 연출력을 함께
               발전시켰습니다. 결과적으로 React의 핵심 개념을 실무 감각으로
               체득하고, 스스로 기획·디자인·구현 전 과정을 주도할 수 있는 역량을
@@ -74,10 +88,10 @@ export default function Project2() {
 
           <div className="port2-buttons">
             <Link to="/project1">
-              <button className="btn-primary2">← Project1</button>
+              <button className="btn-primary2">← &nbsp;Project1</button>
             </Link>
             <Link to="/project3">
-              <button className="btn-primary2">Next Project →</button>
+              <button className="btn-primary2">Next Project &nbsp; →</button>
             </Link>
           </div>
         </div>

@@ -18,7 +18,7 @@ export default function Contact() {
     e.preventDefault();
     alert("메시지가 전송되었습니다 😊");
 
-    // 입력값 초기화
+   
     setFormData({
       name: "",
       email: "",
@@ -35,9 +35,9 @@ export default function Contact() {
       </header>
 
       <div className="contact-container">
-        {/* 왼쪽 소개 */}
+       
         <div className="contact-left">
-          <h2>Contact Me</h2>
+          <h2 className="form-title">Contact Me</h2>
           <h3>Let’s Work Together</h3>
           <p>
             프로젝트 제안, 협업 문의, 또는 간단한 인사도 환영합니다.
