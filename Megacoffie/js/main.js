@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ==========================================================
-  // [A] 전역 변수 및 요소 선택
-  // ==========================================================
+  // 전역 변수 및 요소 선택
+
   const header = document.querySelector("header");
   const navLinks = document.querySelectorAll(".left_float a");
   const sections = document.querySelectorAll(".section");
@@ -13,9 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const SCROLL_DURATION = 1000;
   const transitionTiming = "cubic-bezier(0.25, 0.46, 0.45, 0.94)";
 
-  // ==========================================================
-  // [B] 헬퍼 함수
-  // ==========================================================
+  // 헬퍼 함수
+  //
 
   function updateHeaderStyle(index) {
     const isScrolled = sections[index].id !== "main-section";
@@ -52,10 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ==========================================================
-  // [C] 풀페이지 스크롤 로직
-  // ==========================================================
-
+  // 풀페이지 스크롤 로직
+  //
   function scrollToSection(index) {
     if (index < 0 || index >= totalSections || isScrolling) {
       return;
@@ -121,9 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ==========================================================
-  // [D] 메인 섹션 슬라이드 스크립트
-  // ==========================================================
+  // 메인 섹션 슬라이드 스크립트
+
   const slidesContainer = document.querySelector(".slides.main-container");
   const slides = document.querySelectorAll(".slide");
   const slideNavButtons = document.querySelectorAll("#float_div button");
@@ -211,9 +206,8 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", () => showMainSlide(i));
   });
 
-  // ==========================================================
-  // [E] 메뉴 섹션 슬라이드 스크립트 (중앙 정렬 + 바운스 로직)
-  // ==========================================================
+  // 메뉴 섹션 슬라이드 스크립트 (중앙 정렬 + 바운스 로직)
+
   const menuslidesViewport = document.querySelector(".menuslides-viewport");
   const menuslidesContainer = document.querySelector(
     ".menuslides-viewport .menuslides"
@@ -228,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuTotalSlides = menuSlides.length;
   let menuCurrentIndex = 0;
 
-  // ⭐ 바운스 저항 계수
+  // 바운스 저항 계수
   const BOUNCE_FACTOR = 4;
 
   let menuSlideWidth = 0;
@@ -371,9 +365,8 @@ document.addEventListener("DOMContentLoaded", function () {
     goToMenuSlide(menuCurrentIndex);
   }
 
-  // ==========================================================
-  // [F] Intersection Observer (스크롤 애니메이션)
-  // ==========================================================
+  // Intersection Observer (스크롤 애니메이션)
+  //
 
   const animatedElements = document.querySelectorAll(
     ".menu-text, .franchise-intro, .mega-text, .event-title"
@@ -402,9 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ==========================================================
-  // [G] 초기 로드 및 리사이즈 이벤트
-  // ==========================================================
+  // 초기 로드 및 리사이즈 이벤트
 
   initializeCurrentSection();
   updateHeaderStyle(currentSectionIndex);
