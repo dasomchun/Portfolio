@@ -16,7 +16,7 @@ export default function Project2() {
         <div className="port2-images">
           <div className="left-image">
             <a
-              href="https://portfolio-ugh5-git-main-dasomchuns-projects.vercel.app/"
+              href="https://portfolio-d27x.vercel.app/"
               target="_blank"
               rel="noreferrer"
             >
@@ -24,14 +24,14 @@ export default function Project2() {
             </a>
           </div>
           <a
-            href="https://portfolio-ugh5-git-main-dasomchuns-projects.vercel.app/"
+            href="https://portfolio-d27x.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
             <img src="../images/a2.png" alt=" 더무비 서브페이지1" />
           </a>
           <a
-            href="https://portfolio-ugh5-git-main-dasomchuns-projects.vercel.app/"
+            href="https://portfolio-d27x.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
