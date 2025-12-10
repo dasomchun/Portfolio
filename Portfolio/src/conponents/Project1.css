@@ -226,8 +226,8 @@
   }
 
   .port1-images {
-    grid-template-columns: 1fr;
-    max-width: 90%;
+    grid-template-columns: 1fr 1.1fr;
+    max-width: 92%;
   }
 
   .port1-images img {
