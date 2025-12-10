@@ -80,7 +80,7 @@
 .port3-images a:hover img {
   transform: scale(1.03);
 }
-port3-info {
+.port3-info {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 14px;
   border: 1px solid rgba(245, 247, 255, 0.9);
@@ -159,11 +159,10 @@ port3-info {
   font-size: 1.1rem;
   font-weight: 800;
   color: #6b7cff;
-  margin-top: -10px;
 }
 
 .port3-result p {
-  margin-top: -15px;
+  margin-top: -10px;
   font-size: 1rem;
   color: black;
   line-height: 1.7;

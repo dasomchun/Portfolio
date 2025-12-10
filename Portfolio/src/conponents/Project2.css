@@ -124,7 +124,6 @@
   color: #6b7cff;
   font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
   white-space: nowrap;
 }
 
@@ -143,10 +142,10 @@
   font-size: 1.1rem;
   font-weight: 800;
   color: #6b7cff;
-  margin-bottom: 0.5rem;
 }
 
 .port2-result p {
+  margin-top: -10px;
   font-size: 1rem;
   color: black;
   line-height: 1.7;

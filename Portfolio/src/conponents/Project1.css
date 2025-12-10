@@ -186,11 +186,10 @@
   font-size: 1.1rem;
   font-weight: 800;
   color: #6b7cff;
-  margin-top: -10px;
 }
 
 .port1-result p {
-  margin-top: -15px;
+  margin-top: -10px;
   font-size: 1rem;
   color: black;
   line-height: 1.7;

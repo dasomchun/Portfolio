@@ -71,7 +71,7 @@ export default function Project3() {
           </div>
 
           <div className="port3-result">
-            <h4>성과</h4>
+            <h4>프로젝트 성과</h4>
             <p>
               20여 개 이상의 화면을 피그마에서 재현하며, 컴포넌트 구조화 및 오토
               레이아웃 활용 능력을 향상시켰습니다. 앱의 색상, 폰트, 인터랙션
