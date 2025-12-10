@@ -64,6 +64,8 @@
   margin: px auto;
   align-items: start;
   padding: 4rem 2rem;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .port1-images {
