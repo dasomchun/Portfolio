@@ -178,6 +178,7 @@
 
 @media (max-width: 1024px) {
   .port2-container {
+    margin: 100px auto;
     grid-template-columns: 1fr;
   }
 
@@ -190,7 +191,7 @@
     height: 200px;
   }
   .port2-info {
-    max-width: 90%;
+    max-width: 85%;
   }
 }
 @media (max-width: 768px) {

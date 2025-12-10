@@ -221,6 +221,7 @@
 
 @media (max-width: 1024px) {
   .port1-container {
+    margin: 100px auto;
     grid-template-columns: 1fr;
   }
 
@@ -233,7 +234,7 @@
     height: 200px;
   }
   .port1-info {
-    max-width: 90%;
+    max-width: 85%;
   }
 }
 

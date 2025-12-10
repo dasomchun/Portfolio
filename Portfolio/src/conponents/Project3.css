@@ -200,6 +200,7 @@
 @media (max-width: 1024px) {
   .port3-container {
     grid-template-columns: 1fr;
+    margin: 100px auto;
   }
 
   .port3-images {
@@ -211,7 +212,7 @@
     height: 200px;
   }
   .port3-info {
-    max-width: 90%;
+    max-width: 85%;
   }
 }
 @media (max-width: 768px) {
