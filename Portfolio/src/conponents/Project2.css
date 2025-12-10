@@ -181,7 +181,7 @@
 
   .port2-images {
     grid-template-columns: 1fr, 1.1fr;
-    max-width: 92%;
+    max-width: 90%;
   }
 
   .port2-images img {
