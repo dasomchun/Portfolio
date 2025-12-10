@@ -50,9 +50,8 @@ export default function Portfolio1() {
 
           <div className="port1-desc">
             메가커피 공식 홈페이지를 HTML, CSS, JavaScript를 사용해 카피
-            구현했습니다.
-            <br /> 메가커피 홈페이지에서 작동하는 모든 효과를 똑같이 적용하였고,
-            디자인도 최대한 비슷하게 만들어 보았습니다.
+            구현했습니다. 메가커피 홈페이지에서 작동하는 모든 효과를 똑같이
+            적용하였고, 디자인도 최대한 비슷하게 만들어 보았습니다.
           </div>
 
           <div className="port1-stats">

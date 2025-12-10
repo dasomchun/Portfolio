@@ -11,7 +11,7 @@
 
 .port2-container {
   position: relative;
-  margin-top: 200px;
+  margin-top: 150px;
   top: 0;
   display: grid;
   grid-template-columns: 1.3fr 1.3fr;
@@ -65,12 +65,11 @@
 }
 
 .port2-info {
-  margin-top: -50px;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 14px;
   border: 1px solid rgba(245, 247, 255, 0.9);
   box-shadow: 0 2px 4px rgba(150, 150, 150, 0.3);
-  padding: 2rem;
+  padding: 1.5rem;
 }
 .port2-number {
   font-size: 2.8rem;
@@ -82,13 +81,13 @@
   font-size: 2rem;
   font-weight: 900;
   color: black;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .port2-tools {
   display: flex;
   gap: 10px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .port2-tools span {
@@ -96,9 +95,9 @@
   border: 2px solid #6b7cff;
   color: #6b7cff;
   border-radius: 50px;
-  padding: 0.3rem 0.65rem;
+  padding: 0.2rem 0.5rem;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   transition: all 0.3s ease;
 }
 
@@ -111,8 +110,7 @@
   color: #333;
   text-align: justify;
   font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .port2-stats {
@@ -155,7 +153,7 @@
 }
 
 .port2-buttons {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .btn-primary2 {

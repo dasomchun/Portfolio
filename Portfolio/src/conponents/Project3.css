@@ -11,7 +11,7 @@
 
 .port3-container {
   position: relative;
-  margin-top: 200px;
+  margin-top: 150px;
   top: 0;
   display: grid;
   grid-template-columns: 1.3fr 1.3fr;
@@ -80,13 +80,12 @@
 .port3-images a:hover img {
   transform: scale(1.03);
 }
-.port3-info {
-  margin-top: -50px;
+port3-info {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 14px;
   border: 1px solid rgba(245, 247, 255, 0.9);
   box-shadow: 0 2px 4px rgba(150, 150, 150, 0.3);
-  padding: 2rem;
+  padding: 1.5rem;
 }
 .port3-number {
   font-size: 2.8rem;
@@ -98,13 +97,13 @@
   font-size: 2rem;
   font-weight: 900;
   color: black;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .port3-tools {
   display: flex;
   gap: 10px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .port3-tools span {
@@ -127,13 +126,7 @@
   color: #333;
   text-align: justify;
   font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-.port3-desc a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  line-height: 1.6;
 }
 
 .port3-stats {
@@ -166,17 +159,18 @@
   font-size: 1.1rem;
   font-weight: 800;
   color: #6b7cff;
-  margin-bottom: 0.5rem;
+  margin-top: -10px;
 }
 
 .port3-result p {
+  margin-top: -15px;
   font-size: 1rem;
   color: black;
   line-height: 1.7;
 }
 
 .port3-buttons {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .btn-primary3 {
