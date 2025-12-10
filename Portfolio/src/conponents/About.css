@@ -250,3 +250,12 @@ body {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 768px) {
+  .info-grid {
+    gap: 10px;
+  }
+
+  .info-block {
+    margin-top: 5px;
+  }
+}
