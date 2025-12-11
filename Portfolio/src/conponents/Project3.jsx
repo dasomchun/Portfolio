@@ -59,7 +59,7 @@ export default function Project3() {
           <div className="port3-stats">
             <div className="port3-stat">
               <h4>작업 소요 기간</h4>
-              <p>2025.11.27 ~ 2025.11.</p>
+              <p>2025.12.02 ~ 2025.12.06</p>
             </div>
             <div className="port3-stat">
               <h4>프로젝트 목표</h4>

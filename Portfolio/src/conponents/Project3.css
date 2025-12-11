@@ -123,9 +123,9 @@
 }
 
 .port3-desc {
-  color: #333;
   text-align: justify;
   font-size: 1rem;
+  font-weight: 500;
   line-height: 1.6;
 }
 
@@ -145,6 +145,7 @@
 }
 
 .port3-stat p {
+  font-weight: 500;
   font-size: 1rem;
   color: black;
   line-height: 1.6;
@@ -164,6 +165,7 @@
 .port3-result p {
   margin-top: -10px;
   font-size: 1rem;
+  font-weight: 500;
   color: black;
   line-height: 1.7;
 }
