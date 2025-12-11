@@ -77,7 +77,6 @@ export default function Portfolio1() {
             </p>
           </div>
 
-          {/* 다음 페이지 버튼 */}
           <div className="port1-buttons">
             <Link to="/project2">
               <button className="btn-primary">Next Project &nbsp;→</button>
