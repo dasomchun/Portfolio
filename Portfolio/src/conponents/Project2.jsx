@@ -61,7 +61,7 @@ export default function Project2() {
           <div className="port2-stats">
             <div className="port2-stat">
               <h4>작업 소요 기간</h4>
-              <p>2025.11.22 ~ 2025.11.28</p>
+              <p>2025.11.25 ~ 2025.12.01</p>
             </div>
             <div className="port2-stat">
               <h4>프로젝트 목표</h4>

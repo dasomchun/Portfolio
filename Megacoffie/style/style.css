@@ -6,52 +6,56 @@
 html,
 body {
   min-height: 100vh;
-  width: 100%;
   overflow-x: hidden;
-}
-
-body::-webkit-scrollbar {
-  display: none;
+  overflow-y: hidden;
 }
 ul,
 li {
   list-style: none;
 }
 a {
-  color: black;
   text-decoration: none;
+  color: black;
 }
-
+/* 헤더 */
 header {
   width: 100%;
   height: 105px;
   position: fixed;
-  background-color: transparent;
   top: 0;
   left: 0;
+  background-color: transparent;
+  border-top: none;
   transition: all 0.3s;
   z-index: 999;
-  border-top: none;
-  opacity: 0.8;
 }
-header::selection {
-  background-color: #fdd000;
+header:hover {
+  background-color: #fff;
 }
 
-header:hover {
-  background-color: white;
-  opacity: 1;
+.header-inner {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  gap: 70px;
 }
 
 .header-logo {
-  margin: 20px 0 0 310px;
   width: 200px;
-  height: 30px;
+  height: 60px;
 }
-
 .header-logo a img {
   width: 100%;
   filter: brightness(0);
+  opacity: 0.5;
+}
+header:hover .header-logo a img {
+  opacity: 1;
 }
 
 header.scrolled {
@@ -60,77 +64,38 @@ header.scrolled {
   border-top: 1px solid rgb(255, 255, 255);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
-
-header.scrolled nav > ul > li > a {
-  color: black;
-}
-
 header.scrolled .header-logo a img {
   filter: none;
   opacity: 1;
 }
-
+header.scrolled nav > ul > li > a {
+  color: black;
+}
 header.scrolled .icn {
   border: 2px solid black;
 }
-
 header.scrolled .icn:hover {
   background-color: #fdd000;
-  border: 2px solid #fdd000;
+  border-color: #fdd000;
 }
 header.scrolled .icn img {
   filter: none;
 }
 
 nav {
-  width: 100%;
-}
-
-nav > ul {
-  margin: -50px 0 0 620px;
+  flex: 1;
   display: flex;
-  text-align: center;
+  justify-content: center;
   position: relative;
   z-index: 15;
 }
 
-nav ul > .mega-story-item > a {
-  display: block;
-  width: 113px;
-  height: 105px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 105px;
-  text-decoration: none;
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  z-index: 10;
-  color: #1c1c1b;
-
-  background-color: transparent;
-}
-
-nav ul > .mega-story-item:hover a {
-  background-color: #fdd000;
-}
-
-nav ul > .mega-story-item:hover > ul {
-  background-color: #fdd000;
-}
-
-nav ul > .mega-story-item > a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0px;
-  height: 1px;
-  background-color: black;
-  transition: width 0.3s ease-out;
-}
-
-nav ul > .mega-story-item:hover > a::after {
-  width: 60px;
+  z-index: 15;
 }
 
 nav > ul > li {
@@ -138,95 +103,126 @@ nav > ul > li {
 }
 
 nav > ul > li > a {
+  text-align: center;
   display: block;
   width: 113px;
   height: 105px;
   font-size: 18px;
   font-weight: 500;
   line-height: 105px;
-  text-decoration: none;
+  color: #1c1c1b;
+}
+
+nav > ul > li:hover > a {
+  background-color: #fdd000;
+}
+
+nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transition: width 0.3s;
+}
+nav > ul > li:hover > a::after {
+  width: 60px;
 }
 
 nav ul li ul {
+  position: absolute;
+  top: 105px;
+  left: 0;
   width: 113px;
+  background: transparent;
   text-align: center;
   overflow: hidden;
   height: 0;
   opacity: 0;
-
-  background-color: white;
-  position: absolute;
-  top: 100%;
-  left: 0;
   z-index: 20;
 }
 
 nav ul:hover li ul {
-  height: 215px;
+  height: 190px;
   opacity: 1;
 }
 
 nav ul li ul li a {
   font-size: 15px;
   color: #1c1c1b;
-  padding: 10px 0 9px;
+  padding: 5px 0;
   display: block;
   letter-spacing: -0.05em;
 }
-
 nav ul li ul li a:hover {
   text-decoration: underline;
 }
 
 .shadow {
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 100px;
-  width: 100%;
+  top: 105px;
+  width: 100vw;
   height: 0;
-  background-color: #fff;
-  transition: all 0.2s;
+  background-color: white;
   z-index: 10;
 }
-
-nav ul:hover + .shadow {
-  height: 220px;
+nav:hover .shadow {
+  height: 190px;
 }
+
+nav > ul > li:hover > ul {
+  background-color: #fdd000;
+}
+
+.hamburger {
+  position: relative;
+  z-index: 1100;
+}
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  z-index: 3000;
+  padding-top: 120px;
+}
+
+.mobile-nav.active {
+  right: 0;
+}
+
 .icon {
-  position: absolute;
-  right: 325px;
-  top: 28%;
   display: flex;
-  z-index: 999;
-}
-
-header:hover .icon {
-  opacity: 1;
+  align-items: center;
+  gap: 10px;
 }
 .icn {
-  margin-left: 5px;
   width: 42px;
   height: 42px;
+  padding: 5px;
   border: 2px solid #1c1c1b;
   border-radius: 50%;
-  display: block;
-  padding: 4px;
-  position: relative;
-  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .icn img {
   width: 100%;
-  max-width: 100%;
-  vertical-align: middle;
-  image-rendering: -webkit-optimize-contrast;
+  height: auto;
 }
-
 .icn:hover {
   background-color: #fdd000;
-  border: 2px solid #fdd000;
+  border-color: #fdd000;
 }
-/* main section */
+/* 메인섹션 */
 #main-section {
   height: 100vh;
   position: relative;
@@ -234,17 +230,15 @@ header:hover .icon {
 }
 
 .slides.main-container {
-  height: 100%;
-  width: calc(1920px * 7);
   display: flex;
-
+  width: 100%;
+  height: 100%;
   transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
 }
 
 .slide {
-  width: 1920px;
-  flex-shrink: 0;
+  flex: 0 0 100%;
   height: 100%;
   display: flex;
   cursor: grab;
@@ -467,25 +461,6 @@ header:hover .icon {
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-.menu-under a button {
-  width: 155px;
-  height: 55px;
-  padding: 0 30px;
-  background-color: #fdd000;
-  border: none;
-  box-sizing: border-box;
-  color: #1c1c1b;
-  font-size: 17px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
-}
-
-.menu-under a button:hover {
-  transform: translateY(-4px);
-  background-color: #ffda47;
-}
 
 .menu-text.visible .menu-under h3 {
   opacity: 1;
@@ -499,37 +474,59 @@ header:hover .icon {
   transition-delay: 1s;
 }
 
-.menu-text.visible .menu-under a {
+.menu-text.visible .menu-under button {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 1.2s;
 }
 
+.menu-container button {
+  width: 155px;
+  height: 55px;
+  padding: 0 30px;
+  background-color: #fdd000;
+  border: none;
+  box-sizing: border-box;
+  font-size: 19px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
 .menuslides-viewport {
   position: absolute;
-  top: 17%;
-  left: 52%;
-  width: 1180px;
-  height: 640px;
+  top: 18%;
+  left: 55%;
+  width: 45%;
+  height: 597px;
   overflow: hidden;
 }
 
 .menuslides {
+  position: relative;
   height: 100%;
   display: flex;
   transition: transform 0.5s ease-in-out;
-  margin-left: -340px;
+  align-items: flex-start;
 }
 
 .menuslide {
   width: 418px;
-  height: 597px;
+  height: 610px;
   border-left: 1px solid rgb(212, 212, 212);
   border-right: 1px solid rgb(212, 212, 212);
   border-radius: 12px;
-  margin-right: 15px;
-  margin-top: 190px;
+
+  margin: 190px 15px 0 15px;
+
   flex-shrink: 0;
+  background-color: white;
+  box-sizing: border-box;
+}
+@media (max-width: 1669px) {
+  .menuslide {
+    border: none;
+  }
 }
 
 .menuslide.active {
@@ -560,15 +557,16 @@ header:hover .icon {
 }
 
 .menu-btn {
-  position: absolute;
-  top: 30%;
-  left: 80%;
+  position: relative;
+  top: 29%;
+  left: 130%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
 }
 
 .menu-btn .btn {
+  background: transparent;
   width: 35px;
   height: 30px;
   border: none;
@@ -576,7 +574,6 @@ header:hover .icon {
   position: relative;
   left: auto;
   margin-top: auto;
-  background-color: transparent;
 }
 
 .menu-btn .btn::after {
@@ -584,8 +581,8 @@ header:hover .icon {
   position: absolute;
   width: 35px;
   height: 35px;
-  border-top: 1px solid rgb(200, 200, 200);
-  border-left: 1px solid rgb(200, 200, 200);
+  border-top: 2px solid rgb(200, 200, 200);
+  border-left: 2px solid rgb(200, 200, 200);
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
@@ -606,6 +603,7 @@ header:hover .icon {
   border-top: 2px solid black;
   border-left: 2px solid black;
 }
+
 /* 프랜차이즈 섹션 */
 #franchise-section {
   position: relative;
@@ -619,6 +617,9 @@ header:hover .icon {
   left: 22%;
   position: absolute;
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 50px;
 }
 .franchise-container::selection {
   background-color: #fdd000;
@@ -726,22 +727,32 @@ header:hover .icon {
 
 .franchise-video {
   display: block;
-  width: 515px;
+  max-width: 515px;
+  width: 100%;
   height: 290px;
-  margin-left: 220px;
+  margin-left: 200px;
 }
 
 .franchise-video .videos {
+  max-width: 515px;
   width: 515px;
   height: 290px;
   position: relative;
   margin: 0 auto;
+  overflow: hidden;
 }
-
+.franchise-video .videos > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .franchise-video a button {
   width: 100%;
-  height: 55px;
+  height: 48px;
   cursor: pointer;
+  display: block;
   margin-top: 0px;
   font-size: 18px;
   color: white;
@@ -749,8 +760,7 @@ header:hover .icon {
   background-color: #1c1c1b;
   font-weight: bold;
 }
-
-/* mega-section */
+/* 메가 섹션 */
 
 #mega-section {
   width: 100%;
@@ -760,13 +770,16 @@ header:hover .icon {
 
 .mega-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .mega-text {
   position: absolute;
-  top: 27%;
-  left: 23%;
-  margin-left: -20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  top: 28%;
+  left: 18%;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -813,6 +826,7 @@ header:hover .icon {
 
 .mega-text.visible .mega-title h1 {
   opacity: 1;
+
   transform: translateY(0);
 }
 
@@ -850,6 +864,21 @@ header:hover .icon {
   color: #1c1c1b;
 }
 
+.mega-image {
+  position: absolute;
+  width: 980px;
+  height: 953px;
+  left: 50%;
+}
+
+.mega-image img {
+  width: 100%;
+  height: 953px;
+}
+.mega-inbtn a {
+  display: inline-block;
+}
+
 .mega-inbtn a button {
   background-color: #fdd000;
   width: 145px;
@@ -867,49 +896,7 @@ header:hover .icon {
   color: #1c1c1b;
   transition: transform 0.2s ease-out, background-color 0.2s ease-out;
 }
-.mega-inbtn a button:hover {
-  transform: translateY(-4px);
-  background-color: #ffda47;
-}
-
-.mega-under > * {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.mega-text.visible .mega-under h3 {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.8s;
-}
-
-.mega-text.visible .mega-under p {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1s;
-}
-
-.mega-text.visible .mega-under .mega-inbtn {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1.2s;
-}
-
-.mega-image {
-  position: absolute;
-  width: 980px;
-  height: 953px;
-  left: 50%;
-}
-
-.mega-image img {
-  width: 100%;
-  height: 953px;
-}
-
-/* event-section */
-
+/* 이벤트 섹션 */
 #event-section {
   position: relative;
   width: 100%;
@@ -1048,6 +1035,8 @@ header:hover .icon {
   transform: translateY(-4px);
   background-color: #ffda47;
 }
+
+/* 푸터섹션 */
 #footer-section {
   position: relative;
   width: 100%;
@@ -1196,7 +1185,60 @@ header:hover .icon {
   position: fixed;
   top: 12%;
   right: 30px;
-  z-index: 999;
+  z-index: 1500;
+}
+
+/* 토글 버튼 (모바일용) */
+.right-toggle-btn {
+  display: none;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #1c1c1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.right-toggle-btn img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+}
+
+.right-toggle-btn:hover {
+  background-color: #fdd000;
+}
+
+.right_float {
+  position: fixed;
+  top: 12%;
+  right: 30px;
+  z-index: 1500;
+}
+
+/* 기본 상태에서는 숨김 (데스크톱에서 안 보이게) */
+.right-toggle-btn {
+  display: none;
+}
+
+.right-toggle-btn img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+}
+
+.right-toggle-btn:hover {
+  background-color: #fdd000;
+}
+
+.right_float ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .right_float ul li {
@@ -1213,6 +1255,7 @@ header:hover .icon {
   padding: 20px 5px;
   border-radius: 50%;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .right_float ul li:hover {
@@ -1223,6 +1266,7 @@ header:hover .icon {
 .right_float ul li:hover a {
   color: #1c1c1b;
 }
+
 .right_float ul li:nth-of-type(2) a {
   color: #fdd000;
 }
@@ -1235,9 +1279,12 @@ header:hover .icon {
 .right_float ul li:nth-of-type(4) {
   padding: 30px 0;
 }
+
 .right_float ul li a {
   color: white;
+  text-decoration: none;
 }
+
 .right_float ul li span {
   display: block;
   font-family: "Roboto", sans-serif;
@@ -1245,6 +1292,7 @@ header:hover .icon {
   font-weight: 900;
   margin-top: 5px;
 }
+
 .left_float {
   position: fixed;
   bottom: 10px;

@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const transitionTiming = "cubic-bezier(0.25, 0.46, 0.45, 0.94)";
 
   // 헬퍼 함수
-  //
 
   function updateHeaderStyle(index) {
     const isScrolled = sections[index].id !== "main-section";
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 풀페이지 스크롤 로직
-  //
+
   function scrollToSection(index) {
     if (index < 0 || index >= totalSections || isScrolling) {
       return;
@@ -206,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", () => showMainSlide(i));
   });
 
-  // 메뉴 섹션 슬라이드 스크립트 (중앙 정렬 + 바운스 로직)
+  //  메뉴 섹션 슬라이드 스크립트 (왼쪽 정렬 로직)
 
   const menuslidesViewport = document.querySelector(".menuslides-viewport");
   const menuslidesContainer = document.querySelector(
@@ -222,12 +221,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuTotalSlides = menuSlides.length;
   let menuCurrentIndex = 0;
 
-  // 바운스 저항 계수
+  // ⭐ 바운스 저항 계수 (유지)
   const BOUNCE_FACTOR = 4;
 
   let menuSlideWidth = 0;
   let menuSlideStepWidth = 0;
-  let viewportCenterOffset = 0;
+  // let viewportCenterOffset = 0; // 중앙 정렬이 아니므로 필요 없음
 
   let menuIsDragging = false;
   let menuStartX = 0;
@@ -236,43 +235,40 @@ document.addEventListener("DOMContentLoaded", function () {
   let menuPrevTranslate = 0;
 
   if (menuslidesContainer && menuSlides.length > 0 && prevBtn && nextBtn) {
-    // 치수 계산 및 업데이트
+    // 치수 계산 및 업데이트 (왼쪽 정렬을 위해 수정)
     window.updateMenuDimensions = function () {
       if (!menuslidesViewport || menuSlides.length === 0) return;
-
-      const viewportWidth = menuslidesViewport.offsetWidth;
 
       menuSlideWidth = menuSlides[0].offsetWidth;
       const style = window.getComputedStyle(menuSlides[0]);
       const marginRight = parseFloat(style.marginRight) || 0;
+      // 슬라이드 너비 + 마진 = 한 칸 이동 거리
       menuSlideStepWidth = menuSlideWidth + marginRight;
-
-      viewportCenterOffset = viewportWidth / 2 - menuSlideWidth / 2;
 
       goToMenuSlide(menuCurrentIndex, false);
     };
 
-    // 버튼 상태 업데이트
+    // 버튼 상태 업데이트 (유지)
     function updateButtonState() {
       prevBtn.disabled = menuCurrentIndex <= 0;
       nextBtn.disabled = menuCurrentIndex >= menuTotalSlides - 1;
     }
 
-    // 활성 슬라이드 스타일 적용
+    // 활성 슬라이드 스타일 적용 (유지)
     function applyActiveStyle() {
       menuSlides.forEach((slide, i) => {
         slide.classList.toggle("active", i === menuCurrentIndex);
       });
     }
 
-    // 특정 인덱스로 이동 (중앙 정렬 로직)
+    // 특정 인덱스로 이동 (왼쪽 경계 정렬 로직으로 수정)
     window.goToMenuSlide = function (index, useAnimation = true) {
       let newIndex = Math.max(0, Math.min(menuTotalSlides - 1, index));
 
       menuCurrentIndex = newIndex;
 
-      const targetTranslate =
-        viewportCenterOffset - newIndex * menuSlideStepWidth;
+      // 0을 기준으로 현재 인덱스 * 이동 거리를 음수로 적용
+      const targetTranslate = -newIndex * menuSlideStepWidth;
 
       if (useAnimation) {
         menuslidesContainer.style.transition = `transform ${menuTransitionDuration} ${transitionTiming}`;
@@ -288,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
       applyActiveStyle();
     };
 
-    // 드래그 시작
+    // 드래그 시작 (유지)
     menuslidesContainer.addEventListener("mousedown", (event) => {
       event.preventDefault();
       menuIsDragging = true;
@@ -298,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuslidesContainer.classList.add("dragging");
     });
 
-    // 드래그 이동 (바운스 로직 적용)
+    // 드래그 이동 (바운스 로직을 왼쪽 정렬에 맞게 수정)
     menuslidesContainer.addEventListener("mousemove", (event) => {
       if (!menuIsDragging) return;
 
@@ -309,24 +305,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let newTranslate = menuPrevTranslate + distanceX;
 
-      // 최소/최대 Translate 계산
-      const maxTranslate = viewportCenterOffset; // 첫 번째 슬라이드가 중앙에 왔을 때 (왼쪽 경계)
+      const maxTranslate = 0; // 첫 번째 슬라이드가 가장 왼쪽 (왼쪽 경계)
       const minTranslate =
-        viewportCenterOffset - (menuTotalSlides - 1) * menuSlideStepWidth; // 마지막 슬라이드가 중앙에 왔을 때 (오른쪽 경계)
+        -(menuTotalSlides * menuSlideStepWidth) +
+        menuslidesViewport.offsetWidth; // 전체 길이에서 뷰포트 너비만큼 뺀 값 (오른쪽 경계)
+
+      const lastSlideLeftEdgeTranslate =
+        -(menuTotalSlides - 1) * menuSlideStepWidth;
+
+      // 메뉴 슬라이드 뷰포트 너비
+      const viewportWidth = menuslidesViewport.offsetWidth;
+
+      // 0: 첫 번째 슬라이드 왼쪽 경계.
+      // -(menuTotalSlides - 1) * menuSlideStepWidth: 마지막 슬라이드가 첫 번째 슬라이드의 위치에 있을 때.
+      const theoreticalMinTranslate =
+        -(menuTotalSlides - 1) * menuSlideStepWidth;
 
       // ⭐ 바운스 로직 적용 (경계를 넘어갈 때 저항)
       if (newTranslate > maxTranslate) {
+        // 왼쪽으로 더 못 가고 당겨질 때 (newTranslate는 양수)
         const overflow = newTranslate - maxTranslate;
         newTranslate = maxTranslate + overflow / BOUNCE_FACTOR;
-      } else if (newTranslate < minTranslate) {
-        const overflow = minTranslate - newTranslate;
-        newTranslate = minTranslate - overflow / BOUNCE_FACTOR;
+      } else if (newTranslate < theoreticalMinTranslate) {
+        // 오른쪽으로 더 못 가고 당겨질 때 (newTranslate는 음수)
+        const overflow = theoreticalMinTranslate - newTranslate;
+        newTranslate = theoreticalMinTranslate - overflow / BOUNCE_FACTOR;
       }
 
       menuslidesContainer.style.transform = `translateX(${newTranslate}px)`;
     });
 
-    // 드래그 종료 (goToMenuSlide가 바운스된 위치에서 정상 위치로 부드럽게 복귀시킴)
+    // 드래그 종료 (유지)
     const endMenuDrag = (event) => {
       if (!menuIsDragging) return;
       menuIsDragging = false;
@@ -352,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // 네비게이션 버튼 클릭 이벤트
+    // 네비게이션 버튼 클릭 이벤트 (유지)
     prevBtn.addEventListener("click", () =>
       goToMenuSlide(menuCurrentIndex - 1)
     );
@@ -360,13 +369,12 @@ document.addEventListener("DOMContentLoaded", function () {
       goToMenuSlide(menuCurrentIndex + 1)
     );
 
-    // 초기화
+    // 초기화 (유지)
     updateMenuDimensions();
     goToMenuSlide(menuCurrentIndex);
   }
 
   // Intersection Observer (스크롤 애니메이션)
-  //
 
   const animatedElements = document.querySelectorAll(
     ".menu-text, .franchise-intro, .mega-text, .event-title"
@@ -396,6 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // 초기 로드 및 리사이즈 이벤트
+  //
 
   initializeCurrentSection();
   updateHeaderStyle(currentSectionIndex);
@@ -412,4 +421,47 @@ document.addEventListener("DOMContentLoaded", function () {
       updateMenuDimensions();
     }
   });
+});
+
+// 첫 섹션 이후에 로고 밝아짐 효과
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileNav = document.querySelector(".mobile-nav");
+
+  if (!hamburger || !mobileNav) {
+    console.error("❌ hamburger 또는 mobile-nav를 찾을 수 없습니다.");
+    return;
+  }
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileNav.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+
+  mobileNav.addEventListener("wheel", function (e) {
+    e.stopPropagation(); // 모바일 메뉴 내부에서 휠 이벤트만 작동
+  });
+});
+
+// 오른쪽 플로팅 메뉴 토글
+
+document.addEventListener("DOMContentLoaded", () => {
+  const rightFloat = document.querySelector(".right_float");
+  const rightToggleBtn = document.querySelector(".right-toggle-btn");
+
+  if (rightFloat && rightToggleBtn) {
+    rightToggleBtn.addEventListener("click", () => {
+      rightFloat.classList.toggle("active");
+    });
+  }
 });
