@@ -456,12 +456,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // 오른쪽 플로팅 메뉴 토글
 
 document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".right-toggle-btn");
   const rightFloat = document.querySelector(".right_float");
-  const rightToggleBtn = document.querySelector(".right-toggle-btn");
 
-  if (rightFloat && rightToggleBtn) {
-    rightToggleBtn.addEventListener("click", () => {
-      rightFloat.classList.toggle("active");
-    });
-  }
+  toggleBtn.addEventListener("click", () => {
+    rightFloat.classList.toggle("active");
+  });
 });

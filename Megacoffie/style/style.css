@@ -896,21 +896,35 @@ nav > ul > li:hover > ul {
   color: #1c1c1b;
   transition: transform 0.2s ease-out, background-color 0.2s ease-out;
 }
+
 /* 이벤트 섹션 */
 #event-section {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
+.event-wrap {
+  width: 1280px;
+  transform-origin: center center;
+  transition: transform 0.2s ease-out;
+}
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .event-container::selection {
   background-color: #fdd000;
 }
 
 .event-title {
-  position: absolute;
-  left: 39%;
-  top: 9%;
+  position: relative;
+  left: 0;
+  margin: 0 auto 0;
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -923,6 +937,7 @@ nav > ul > li:hover > ul {
 }
 
 .event-title h3 {
+  text-align: center;
   font-size: 24px;
   color: #1c1c1b;
   font-weight: 300;
@@ -943,7 +958,7 @@ nav > ul > li:hover > ul {
   font-size: 60.48px;
   color: #1c1c1b;
   position: relative;
-  margin: 10px 0 0 30px;
+  margin-top: 10px;
   font-family: "Roboto", sans-serif;
   opacity: 0;
   transform: translateY(30px);
@@ -960,8 +975,7 @@ nav > ul > li:hover > ul {
   width: 420px;
   height: 40px;
   background-color: #fdd000;
-  margin-top: -40px;
-  position: absolute;
+  margin: -40px auto 0;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.6s ease-out;
@@ -972,14 +986,15 @@ nav > ul > li:hover > ul {
 }
 
 .event-body {
-  position: absolute;
-  width: 1080px;
-  height: 500px;
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 347px);
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  margin: 30px auto;
   gap: 20px;
-  top: 25%;
-  left: 22%;
+  transition: none;
 }
 .event-card {
   border: 1px solid rgb(232, 232, 222);
@@ -1008,19 +1023,21 @@ nav > ul > li:hover > ul {
 }
 
 .event-btn {
-  position: absolute;
-  top: 80%;
-  left: 38%;
+  position: relative;
+  left: 50%;
+  margin-left: -5px;
+  transform: translateX(-50%);
+  text-align: center;
 }
 .event-btn p {
-  margin: 15px 0 0 45px;
   font-size: 16px;
   color: #1c1c1b;
   font-weight: 300;
 }
 
 .event-btn button {
-  margin: 20px 0 0 150px;
+  margin: 20px auto 0;
+  display: block;
   width: 160px;
   height: 55px;
   text-align: center;
@@ -1038,134 +1055,118 @@ nav > ul > li:hover > ul {
 
 /* 푸터섹션 */
 #footer-section {
-  position: relative;
   width: 100%;
-  height: 334px;
-}
-#footer-section::selection {
-  background-color: #fdd000;
+  background-color: #212121;
+  color: #fff;
+  font-family: "Pretendard", sans-serif;
 }
 
+/* ====== 상단 노란 nav bar ====== */
 .foot-nav {
-  position: absolute;
-  width: 100%;
-  height: 62.39px;
   background-color: #fdd000;
-  z-index: 10;
+  width: 100%;
+  height: auto;
+  padding: 20px;
 }
 .foot-nav ul {
+  position: relative;
   display: flex;
+  align-items: center;
   width: 1280px;
-  height: 22.39px;
-  padding: 20px 0 0 300px;
-}
-
-.foot-nav ul li {
-  padding-right: 20px;
+  margin: 0 auto;
+  list-style: none;
+  gap: 30px;
 }
 .foot-nav ul li a {
-  font-weight: 600;
   color: #1c1c1b;
-  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: noto-sans, sans-serif;
 }
-
 .foot-nav ul li:hover a {
   text-decoration: underline;
 }
 
+/* ====== 메인 footer ====== */
 .foot-main {
-  width: 100%;
-  height: 100%;
-  background-color: #1c1c1b;
-}
-.foot-icon {
-  z-index: 10;
-  position: absolute;
-  left: 17%;
-  top: 38%;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #212121;
+  width: 1280px; /* ✅ 상단 .foot-nav와 동일 */
+  margin: 0 auto; /* ✅ 가운데 정렬 */
+  padding: 60px 20px; /* ✅ 내부 여백만 줌 */
 }
-.foot-icon img {
+
+.foot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* ✅ 줄바꿈 허용 */
+  gap: 5px;
+}
+.foot-icon > img {
   width: 180px;
-  height: 36.98px;
+  height: auto;
+  flex: 0 0 auto;
   margin-right: 15px;
 }
-
 .foot {
   background-color: #fff;
-  margin-left: 5px;
   width: 42px;
   height: 42px;
-  border: 2px solid #1c1c1b;
   border-radius: 50%;
-  display: block;
-  padding: 4px;
-  position: relative;
-  left: -10px;
+  padding: 20px 3px;
+  border: 2px solid #1c1c1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  flex: 0 0 auto;
 }
-
 .foot img {
   width: 100%;
   height: 100%;
+  margin-top: 3px;
 }
 .foot:hover {
   background-color: #fdd000;
-  border: 2px solid #fdd000;
+  border-color: #fdd000;
 }
 
-.foot-text {
-  position: absolute;
-  width: 1000px;
-  line-height: 15px;
-  padding: 195px 0 0 320px;
-  color: #aaaaaa;
-  font-size: 14.4px;
-  font-weight: 300;
-}
-
-.foot-text span {
-  color: white;
-  font-weight: bold;
-  font-size: 14.4px;
-}
-
+/* --- 오른쪽: 카테고리 메뉴 --- */
 .nav-foot {
-  position: absolute;
-  top: 36%;
+  position: relative;
+  margin-top: -160px;
   left: 52%;
   transform: none;
 }
-
 .nav-foot > ul {
   display: flex;
   padding: 0;
   margin: 0;
   text-align: left;
 }
-
 .nav-foot > ul > li {
   list-style: none;
   margin-right: 20px;
-
   color: white;
   font-size: 17px;
   font-weight: 700;
   line-height: 1.5;
   min-width: 80px;
 }
-
 .nav-foot ul ul {
   display: block;
   margin-top: 15px;
   padding: 0;
 }
-
 .nav-foot ul ul li {
   list-style: none;
   padding: 0;
   margin-top: 20px;
 }
-
 .nav-foot ul ul li a {
   color: #aaaaaa;
   font-size: 14px;
@@ -1175,11 +1176,26 @@ nav > ul > li:hover > ul {
   padding: 2px 0;
   text-decoration: none;
 }
-
 .nav-foot ul ul li a:hover {
   color: white;
   text-decoration: underline;
 }
+.foot-text {
+  width: 100%;
+  color: #aaaaaa;
+  font-size: 14.4px;
+  font-weight: 300;
+  text-align: left;
+  line-height: 30px;
+  margin-top: 25px;
+  letter-spacing: 0.5px;
+  font-family: Noto-sans, sans-serif;
+}
+.foot-text span {
+  color: #fff;
+  font-weight: 700;
+}
+/* 오른쪽 플로팅 메뉴 */
 
 .right_float {
   position: fixed;
@@ -1193,6 +1209,8 @@ nav > ul > li:hover > ul {
   display: none;
   width: 65px;
   height: 65px;
+  font-size: 18px;
+  line-height: 45px;
   border-radius: 50%;
   background-color: #1c1c1b;
   display: flex;
@@ -1235,6 +1253,31 @@ nav > ul > li:hover > ul {
   background-color: #fdd000;
 }
 
+.toggle-close {
+  display: none;
+  font-size: 24px;
+  line-height: 1;
+}
+.toggle-dots h2 {
+  margin-top: -10px;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+.toggle-dots p {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: -15px;
+}
+
+.right_float.active .toggle-dots {
+  display: none;
+}
+
+.right_float.active .toggle-close {
+  display: block;
+}
+
 .right_float ul {
   list-style: none;
   margin: 0;
@@ -1242,20 +1285,22 @@ nav > ul > li:hover > ul {
 }
 
 .right_float ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ✅ 세로 중앙 */
+  align-items: center; /* ✅ 가로 중앙 */
   background-color: #1c1c1b;
   width: 110px;
   height: 110px;
-  line-height: 20px;
+  border-radius: 50%;
   margin-bottom: 15px;
   text-align: center;
   font-size: 14.4px;
   font-weight: 300;
-  cursor: pointer;
   color: white;
-  padding: 20px 5px;
-  border-radius: 50%;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  padding: 0; /* ✅ 패딩 제거 */
 }
 
 .right_float ul li:hover {
@@ -1275,11 +1320,6 @@ nav > ul > li:hover > ul {
   color: #1c1c1b;
 }
 
-.right_float ul li:nth-of-type(3),
-.right_float ul li:nth-of-type(4) {
-  padding: 30px 0;
-}
-
 .right_float ul li a {
   color: white;
   text-decoration: none;
@@ -1292,6 +1332,8 @@ nav > ul > li:hover > ul {
   font-weight: 900;
   margin-top: 5px;
 }
+
+/* 왼쪽 네비메뉴 */
 
 .left_float {
   position: fixed;
