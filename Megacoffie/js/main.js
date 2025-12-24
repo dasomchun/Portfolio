@@ -82,23 +82,37 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 휠 이벤트 리스너
+  // --- PC용 휠 이벤트 ---
   window.addEventListener(
     "wheel",
-    function (event) {
+    (event) => {
       if (isScrolling || event.deltaY === 0) {
         event.preventDefault();
         return;
       }
-
       event.preventDefault();
-
       const direction = event.deltaY > 0 ? 1 : -1;
-      let nextIndex = currentSectionIndex + direction;
-
-      scrollToSection(nextIndex);
+      scrollToSection(currentSectionIndex + direction);
     },
     { passive: false }
   );
+
+  // --- 모바일용 터치 이벤트 --- ⭐ 여기를 새로 추가
+  let touchStartY = 0;
+  let touchEndY = 0;
+  const TOUCH_THRESHOLD = 50;
+
+  window.addEventListener("touchstart", (e) => {
+    touchStartY = e.touches[0].clientY;
+  });
+
+  window.addEventListener("touchend", (e) => {
+    touchEndY = e.changedTouches[0].clientY;
+    const diff = touchStartY - touchEndY;
+    if (isScrolling) return;
+    if (diff > TOUCH_THRESHOLD) scrollToSection(currentSectionIndex + 1);
+    else if (diff < -TOUCH_THRESHOLD) scrollToSection(currentSectionIndex - 1);
+  });
 
   // 네비게이션 링크 클릭 이벤트
   navLinks.forEach((link) => {
