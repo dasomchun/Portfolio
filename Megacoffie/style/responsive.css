@@ -722,12 +722,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  /* 프랜차이즈 */
-  #franchise-section {
-    width: 100%;
-  }
 
+  /* 프랜차이즈 */
+ 
   .franchise-container {
+    width: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -772,13 +771,169 @@
     margin-top: 10px;
     font-size: 12px;
   }
-  .franchise-video {
+  
+  .franchise-video{
+    padding: 0;
+    max-width: 515px;
     width: 100%;
+  }
+  .franchise-video a button{
+    width: 100%;
+  }
+  /* 메가섹션 */
+
+  #mega-section {
+    height: auto !important; 
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
-  .franchise-video a button {
-    width: 100%;
+ .mega-container {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important; 
   }
+
+  .mega-text {
+    width: 100% !important;
+    padding: 40px 20px 10px 20px !important; 
+    position: absolute !important;
+    box-sizing: border-box;
+  }
+
+  .mega-image {
+    position: absolute !important;
+    bottom: 0;
+    max-width: 800px;
+    width: 100% !important; 
+    max-height: 480px;
+    height: auto !important; 
+    margin-top: -20px !important; /* ⭐ 마이너스 마진으로 이미지를 더 위로 올림 */
+    left: 0 !important;
+    display: block !important;
+  }
+
+  .mega-image img {
+    opacity: 0.15;
+    width: 100% !important; /* 이미지가 박스에 꽉 차게 */
+    max-height: 480px;
+    height: auto !important; /* 비율에 맞게 높이 자동 생성 (안 잘림) */
+    display: block !important;
+    max-height: none !important; /* 높이 제한 해제 */
+    object-fit: contain !important; /* 이미지 전체가 다 나오도록 함 */
+  }
+  .mega-title h3{
+    font-size: 16px;
+  }
+
+  .mega-title h1{
+    font-size: 34.56px;
+    line-height: 34px;
+  }
+
+  .mega-under h3{
+    font-size: 14.4px;
+  }
+
+  .mega-under p{
+    font-size: 12px;
+  }
+  .mega-back{
+    width: 50%;
+  }
+  .mega-inbtn{
+    display: flex;
+  }
+.mega-inbtn a button{
+  width: 110px;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
+  font-size: 16px;
+}
+  .mobile-hidden{
+    display: none;
+  }
+  
+  /* 이벤트섹션 */
+ .event-container {
+    width: 100% !important;
+    padding: 20px 0;
+  }
+
+  .event-body {
+    width: 90% !important;
+    margin: 10px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0px; 
+  }
+
+  .event-card {
+    display: flex !important; 
+    flex-direction: row !important;
+    align-items: center !important; 
+    width: 100% !important;
+    padding-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.15) !important;
+  }
+
+
+  .event-card img {
+    max-width: 120px;
+    height: auto;
+    width: 100%;
+    object-fit: fill !important; 
+    border-radius: 8px;
+    margin-right: 15px !important;
+    flex-shrink: 0; 
+  }
+
+  .event-title h3{
+    font-size: 16px;
+  }
+
+  .event-title h1{
+    margin-bottom: 10px;
+    font-size: 34.45px;
+  }
+  .event-back{
+    margin-top: -30px;
+    width: 100%;
+    height: 20px;
+  }
+
+  .event-card h2 {
+    font-size: 15px !important;
+    margin: 0 0 5px 0 !important; 
+    color: #333;
+    display: -webkit-box;
+    font-weight: 300;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1; }
+
+  .event-card p {
+    font-size: 12px !important;
+    color: #999 !important;
+    margin: 0 !important;
+  }
+  .event-btn p{
+    font-size: 12px;
+  }
+  .event-btn a button{
+    font-weight: bold;
+    font-size: 16px;
+    width: 132px;
+    height: 40px;
+  }
+
 
   /* 푸터 */
   .foot-nav {
@@ -816,6 +971,7 @@
     text-align: center;
   }
 }
+
 
 @media screen and (min-width: 1281px) {
   .hamburger {
