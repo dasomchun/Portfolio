@@ -726,7 +726,7 @@
 
   /* 프랜차이즈 */
   #franchise-section{
-    height: 100dvh;
+    min-height: 100dvh;
   }
 
   .franchise-container {
@@ -738,9 +738,6 @@
     flex-wrap: wrap;
     position: static;
     gap: 30px;
-    transform: scale(calc(100vw / 1280))
-      translateX(calc((1280px - 100vw) / -2 / (100vw / 1280)))
-      translateY(calc((100vh - (100vh * (100vw / 1280))) / -2 / (100vw / 1280)));
     transform-origin: center center;
   }
   .franchise-intro {
