@@ -227,6 +227,7 @@ nav > ul > li:hover > ul {
 /* 메인섹션 */
 #main-section {
   height: 100vh;
+  height: 100dvh;
   position: relative;
   overflow: hidden;
 }
@@ -373,6 +374,7 @@ nav > ul > li:hover > ul {
 /* 메뉴 섹션 */
 #menu-section {
   height: 100vh;
+  height: 100dvh;
   position: relative;
 }
 
@@ -614,6 +616,7 @@ nav > ul > li:hover > ul {
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   background-color: #fdd000;
 }
 
@@ -770,6 +773,7 @@ nav > ul > li:hover > ul {
 #mega-section {
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   position: relative;
 }
 
@@ -909,6 +913,7 @@ nav > ul > li:hover > ul {
   align-items: center;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
