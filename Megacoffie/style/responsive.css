@@ -983,7 +983,7 @@
 
   .franchise-introti, .franchise-introte {
     margin-left: 0; /* 음수 마진 제거: 잘림 방지 핵심 */
-    margin-top: 50px; /* 상단 여백 조절 */
+    margin-top: 100px; /* 상단 여백 조절 */
     width: 100%;
   }
 
