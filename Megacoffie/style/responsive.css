@@ -974,7 +974,41 @@
   }
 }
 
+@media screen and (max-width:460px){
 
+  .franchise-intro {
+    width: 90%; /* 조금 더 넓게 써서 여백 확보 */
+    align-items: flex-start; /* 왼쪽 정렬 유지 */
+  }
+
+  .franchise-introti, .franchise-introte {
+    margin-left: 0; /* 음수 마진 제거: 잘림 방지 핵심 */
+    margin-top: 50px; /* 상단 여백 조절 */
+    width: 100%;
+  }
+
+  .franchise-introti h1 {
+    font-size: 28px; /* 폰트 크기를 화면에 맞게 약간 축소 */
+    line-height: 1.2;
+    word-break: keep-all; /* 한글 단어 단위 줄바꿈 */
+  }
+
+  .back-white {
+    margin-top: -80px; 
+    max-width: 200px;
+    width: 100%;
+    height: 30px;
+  }
+
+  .franchise-video {
+    width: 90%; /* 비디오가 화면 끝에 붙지 않게 살짝 여백 */
+    max-width: 100%;
+  }
+  
+  .franchise-container {
+    gap: 20px; /* 요소 간 간격 축소 */
+  }
+}
 @media screen and (min-width: 1281px) {
   .hamburger {
     display: none;
