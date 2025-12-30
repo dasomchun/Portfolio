@@ -182,6 +182,7 @@ nav > ul > li:hover > ul {
   position: relative;
   z-index: 1100;
 }
+
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -212,6 +213,7 @@ nav > ul > li:hover > ul {
   border-radius: 50%;
   display: flex;
   align-items: center;
+  cursor: pointer;
   justify-content: center;
 }
 .icn img {
@@ -244,10 +246,13 @@ nav > ul > li:hover > ul {
   cursor: grab;
 }
 
+.slide picture,
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
+  object-position: center;
+  display: block;
 }
 #float_div {
   position: absolute;
@@ -496,7 +501,7 @@ nav > ul > li:hover > ul {
 .menuslides-viewport {
   position: absolute;
   top: 18%;
-  left: 55%;
+  left: 53%;
   width: 45%;
   height: 597px;
   overflow: hidden;
@@ -506,7 +511,7 @@ nav > ul > li:hover > ul {
   position: relative;
   height: 100%;
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  /* transition: transform 0.5s ease-in-out; */
   align-items: flex-start;
 }
 
@@ -1235,7 +1240,7 @@ nav > ul > li:hover > ul {
   position: fixed;
   top: 12%;
   right: 30px;
-  z-index: 1500;
+  /* z-index: 1500; */
 }
 
 /* 기본 상태에서는 숨김 (데스크톱에서 안 보이게) */

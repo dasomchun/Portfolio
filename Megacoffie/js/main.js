@@ -426,11 +426,20 @@ document.addEventListener("DOMContentLoaded", function () {
   showMainSlide(mainSlideIndex);
 
   window.addEventListener("resize", () => {
-    // 메인 슬라이드 리사이즈
-    slideWidth = slides.length > 0 ? slides[0].clientWidth : 0;
-    showMainSlide(mainSlideIndex);
+    // 메인 슬라이드 width 재계산
+    const newSlideWidth = slides.length > 0 ? slides[0].clientWidth : 0;
 
-    // 메뉴 슬라이드 리사이즈 (바운스 로직을 위해 치수 재계산)
+    // 이전 슬라이드 위치를 "비율"로 계산해서 유지
+    const ratio = mainCurrentTranslate / slideWidth;
+
+    slideWidth = newSlideWidth;
+    mainCurrentTranslate = ratio * slideWidth;
+    mainPrevTranslate = mainCurrentTranslate;
+
+    slidesContainer.style.transition = "none"; // 순간이동 느낌 방지용
+    slidesContainer.style.transform = `translateX(${mainCurrentTranslate}px)`;
+
+    // 메뉴 슬라이드 리사이즈
     if (menuslidesContainer) {
       updateMenuDimensions();
     }
@@ -475,5 +484,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggleBtn.addEventListener("click", () => {
     rightFloat.classList.toggle("active");
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const menuLinks = document.querySelectorAll(".mobile-nav > ul > li > a");
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const parentLi = link.parentElement;
+      const submenu = parentLi.querySelector("ul");
+
+      // 하위 메뉴가 없으면 그냥 링크 이동
+      if (!submenu) return;
+
+      e.preventDefault();
+
+      // 현재 클릭한 메뉴가 활성화되어 있는지 확인
+      const isActive = parentLi.classList.contains("active");
+
+      // [핵심] "모든 메뉴 닫기" 로직을 삭제함
+      // 클릭한 메뉴의 상태만 반전시킴
+      if (!isActive) {
+        parentLi.classList.add("active");
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+      } else {
+        parentLi.classList.remove("active");
+        submenu.style.maxHeight = null;
+      }
+    });
   });
 });
