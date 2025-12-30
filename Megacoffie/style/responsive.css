@@ -641,7 +641,6 @@
 
   #menu-section {
     height: 100vh;
-    height: 100dvh;
   }
 
   .menu-container {
@@ -726,7 +725,10 @@
   }
 
   /* 프랜차이즈 */
- 
+  #franchise-section{
+    height: 100dvh;
+  }
+
   .franchise-container {
     width: 100%;
     margin: 0;
